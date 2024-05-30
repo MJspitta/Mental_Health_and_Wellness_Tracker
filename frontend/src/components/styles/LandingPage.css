@@ -1,0 +1,163 @@
+/* header section of landing page */
+header {
+    width: 100%;
+    height: 100vh;
+    background-size:cover;
+    padding: 24px 48px 24px 64px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo {
+    color: #FEB800;
+    background-color: #313036;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.nav-links {
+    background-color: #FDDFC7;
+    padding: 2px;
+    display: flex;
+    border-radius: 10px;
+}
+.navlink {
+    color: #313036;
+    padding: 12px;
+    width: 90px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-decoration: none;
+}
+.navlink:hover {
+    color: #FEB800;
+    background-color: #313036;
+}
+.header-text {
+    width: 500px;
+    color: #313036;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.header-text h1 {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.header-text p {
+    font-size: 24px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.get-started-btn {
+    width: 200px;
+    padding: 12px 32px;
+    border-radius: 10px;
+    color: #FEB800;
+    background-color: #313036;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.get-started-btn:hover {
+    opacity: .8;
+}
+
+/* Main content of landing page */
+main {
+    /* background-color: #FDDFC7; */
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-content: space-between;
+    background-position: 0% 20%;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    background-color: white;
+}
+.main-content-img {
+    width: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-content-img img {
+    width: 80%;
+}
+.main-content-text {
+    width: 51%;
+    padding: 48px;
+    color: #313036;
+}
+.main-content-text h2 {
+    color:#FEB800;
+    font-size: 56px;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-bottom: 24px;
+}
+.content-list-box {
+    margin-bottom: 8px;
+}
+.content-list-text h3 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    color:#FEB800;
+    /* margin-bottom: 10px; */
+}
+.content-list-text p {
+    font-size: 22px;
+}
+
+/* Footer section of landing page */
+footer {
+    background-color: #FDDFC7;
+    text-align: center;
+    padding-top: 40px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    color: #313036;
+}
+footer h2 {
+    margin: 24px 0;
+    font-size: 56px;
+    text-decoration: underline;
+}
+.footer-addy, .footer-email {
+    margin-bottom: 16px;
+    font-size: 22px;
+}
+.footer-number {
+    margin-bottom: 32px;
+    font-size: 22px;
+}
+.bold-footer {
+    font-weight: bold;
+}
+.copyright {
+    border-top: 1px solid #C9A08A;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.copyright p {
+    font-size: 16px;
+}
