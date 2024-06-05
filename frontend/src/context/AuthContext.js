@@ -1,41 +1,35 @@
-import React, { createContext, useState, useEffect } from 'react';
-import api from '../api';
+import { createContext, useReducer, useEffect } from "react";
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [token, setToken] = useState(localStorage.getItem('token'));
+export const authReducer = (state, action) => {
+    switch (action.type) {
+        case 'LOGIN':
+            return { user: action.payload };
+        case 'LOGOUT':
+            return { user: null };
+        default:
+            return state;
+    }
+};
+
+export const AuthContextProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(authReducer, {
+        user: null
+    });
 
     useEffect(() => {
-        if (token) {
-            api.getMoods(token).then(userData => setUser(userData)).catch(() => setToken(null));
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            dispatch({ type: 'LOGIN', payload: user });
         }
-    }, [token]);
+    }, []);
 
-    const register = async (userData) => {
-        const data = await api.register(userData);
-        setToken(data.token);
-        localStorage.setItem('token', data.token);
-        setUser(data.user);
-    };
-
-    const login = async (userData) => {
-        const data = await api.login(userData);
-        setToken(data.token);
-        localStorage.setItem('token', data.token);
-        setUser(data.user);
-    };
-
-    const logout = () => {
-        setToken(null);
-        localStorage.removeItem('token');
-        setUser(null);
-    };
+    console.log('AuthContext state: ', state);
 
     return (
-        <AuthContext.Provider value={{ user, token, register, login, logout }}>
-            {children}
+        <AuthContext.Provider value={{...state, dispatch}}>
+            { children }
         </AuthContext.Provider>
     );
 };

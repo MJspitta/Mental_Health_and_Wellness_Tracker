@@ -1,13 +1,12 @@
-const Activity = require('../models/Activity');
+const Activity = require('../models/activityModel');
+
 
 // get all activities for user
 const getActivities = async (req, res) => {
-    try {
-        const activities = await Activity.find({ user: req.user._id });
-        res.status(200).json(activities);
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch activities' });
-    }
+    const user_id = req.user._id;
+    const activities = await Activity.find({ user_id }).sort({createdAt: -1});
+
+    res.status(200).json(activities);
 };
 
 // add new activity log
@@ -15,11 +14,11 @@ const addActivity = async (req, res) => {
     const { activityType, duration, description } = req.body;
 
     try {
-        const activity = new Activity({ user: req.user._id, activityType, duration, description });
-        await activity.save();
-        res.status(201).json(activity);
+        const user_id = req.user._id;
+        const activity = await Activity.create({activityType, duration, description, user_id});
+        res.status(200).json(activity);
     } catch (error) {
-        res.status(500).json({ error: 'Failed to add activity' });
+        res.status(400).json({ error: error.message });
     }
 };
 

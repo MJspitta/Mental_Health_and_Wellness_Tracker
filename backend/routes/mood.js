@@ -1,17 +1,17 @@
 const express = require('express');
-
-const router = express.Router();
-
 const { getMoods, addMood } = require('../controllers/moodController');
 const requireAuth = require('../middleware/requireAuth');
 
-// middleware to require authentication
+
+const router = express.Router();
+
+// require auth for all mood routes
 router.use(requireAuth);
 
-// get all moods for user
+// get all moods
 router.get('/', getMoods);
 
-// add new mood entry
+// post new mood
 router.post('/', addMood);
 
 module.exports = router;
