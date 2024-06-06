@@ -8,14 +8,14 @@ const LandingPage = () => {
     return (
         <div className="landing-page">
             <header style={{ backgroundImage: `url(${background})` }}>
-            <nav className="navbar">
+                {/* <nav className="navbar">
                     <h2 className="nav-logo">norm</h2>
                     <div className="nav-links">
                         <Link to="/" className="navlink">Home</Link>
                         <Link to="/register" className="navlink">Sign Up</Link>
                         <Link to="/login" className="navlink">Login</Link>
                     </div>
-                </nav>
+                </nav> */}
                 <div className="header-text">
                     <h1>Every step counts on your path to mental wellness.</h1>
                     <p>Start this journey with us, let us help you track your mood, log your activities & set your daily goals towards improving and maintaining good mental health.</p>

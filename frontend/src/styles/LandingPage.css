@@ -6,7 +6,7 @@ header {
     padding: 24px 48px 24px 64px;
     font-family: "Yanone Kaffeesatz", sans-serif;
 }
-.navbar {
+/* .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,7 +43,7 @@ header {
 .navlink:hover {
     color: #FEB800;
     background-color: #313036;
-}
+} */
 .header-text {
     width: 500px;
     color: #313036;

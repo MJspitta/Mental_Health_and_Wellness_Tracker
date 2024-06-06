@@ -23,8 +23,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={user ? <Dashboard /> : <Navigate to="/login" />} />
-          <Route path='/landingPage' element={<LandingPage />} />
+          <Route path='/' element={user ? <Dashboard /> : <Navigate to="/landingPage" />} />
+          <Route path='/landingPage' element={!user ? <LandingPage /> : <Navigate to="/" />} />
           <Route path='/login' element={!user ? <Login /> : <Navigate to="/" />} />
           <Route path='/register' element={!user ? <Register /> : <Navigate to="/" />} />
           <Route path='/mood' element={user ? <MoodsContextProvider><Mood /></MoodsContextProvider> : <Navigate to="/login" />} />

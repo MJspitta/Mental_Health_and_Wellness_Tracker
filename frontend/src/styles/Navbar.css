@@ -40,9 +40,13 @@
     background-color: #313036;
 }
 .nav-bar .nav-profile .nav-auth {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 16px; */
+    background-color: #FDDFC7;
+    padding: 2px;
+    display: flex;
+    border-radius: 10px;
 }
 .nav-bar .nav-profile .nav-auth .nav-link {
     color: #313036;

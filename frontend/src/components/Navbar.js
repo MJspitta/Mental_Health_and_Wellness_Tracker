@@ -15,13 +15,16 @@ const Navbar = () => {
 
     return (
         <div className='nav-bar'>
-            <h1 className="nav-logo">norm</h1>
-            <nav className="nav-links">
-                <Link to="/" className="nav-link">Dashboard</Link>
-                <Link to="/mood" className="nav-link">Mood</Link>
-                <Link to="/activity" className="nav-link">Activity</Link>
-                <Link to="/goal" className="nav-link">Goals</Link>
-            </nav>
+            <Link to="/"><h1 className="nav-logo">norm</h1></Link>
+            {user && (
+                <nav className="nav-links">
+                    <Link to="/" className="nav-link">Dashboard</Link>
+                    <Link to="/mood" className="nav-link">Mood</Link>
+                    <Link to="/activity" className="nav-link">Activity</Link>
+                    <Link to="/goal" className="nav-link">Goals</Link>
+                </nav>
+            )}
+            
             <div className="nav-profile">
                 {/* <Link to="/landingPage">Landing Page</Link> */}
                 {!user && (
