@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ActivityDetails from '../components/ActivityDetails';
 import { useActivitiesContext } from '../hooks/useActivityContext';
 import { useAuthContext } from '../hooks/useAuthContext';
+import '../styles/Activity.css';
 
 
 const Activity = () => {
@@ -69,15 +70,22 @@ const Activity = () => {
         <div className="activity-page">
             <h2>Activities</h2>
             <form onSubmit={handleSubmit} className="activity-form">
-                <label>Activity Type</label>
-                <input type="text" value={activityType} onChange={(e) => setActivityType(e.target.value)} required />
-                <label>Duration</label>
-                <input type="text" value={duration} onChange={(e) => setDuration(e.target.value)} required />
-                <label>Description</label>
-                <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-                <button type="submit">Add Activity</button>
+                <div className="activity-input">
+                    <label>Activity Type</label>
+                    <input type="text" value={activityType} onChange={(e) => setActivityType(e.target.value)} required />
+                </div>
+                <div className="activity-input">
+                    <label>Duration</label>
+                    <input type="text" value={duration} onChange={(e) => setDuration(e.target.value)} required />
+                </div>
+                <div className="activity-input">
+                    <label>Description</label>
+                    {/* <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} /> */}
+                    <textarea rows={5} value={description} onChange={(e) => setDescription(e.target.value)} />
+                </div>
+                <button type="submit" className="activity-btn">Add Activity</button>
             </form>
-            {error && <div className="error">{error}</div>}
+            {/* {error && <div className="error">{error}</div>} */}
             <ul className="activities">
                 {activities && activities.map((activity) => (
                     <ActivityDetails key={activity._id} activity={activity} />

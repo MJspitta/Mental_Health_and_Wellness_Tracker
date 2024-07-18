@@ -5,6 +5,7 @@ header {
     background-size:cover;
     padding: 24px 48px 24px 64px;
     font-family: "Yanone Kaffeesatz", sans-serif;
+    margin-top: -88px;
 }
 /* .navbar {
     display: flex;
@@ -116,6 +117,9 @@ main {
 }
 .content-list-box {
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 .content-list-text h3 {
     font-size: 36px;
@@ -126,6 +130,20 @@ main {
 }
 .content-list-text p {
     font-size: 22px;
+}
+
+/* About the author */
+.about-author {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+hr {
+    border: 5px solid #A86B00;
+    width: 90%;
+    margin: 0 auto;
 }
 
 /* Footer section of landing page */

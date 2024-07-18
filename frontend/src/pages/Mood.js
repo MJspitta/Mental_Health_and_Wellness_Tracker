@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import MoodDetails from '../components/MoodDetails';
 import { useMoodsContext } from '../hooks/useMoodContext';
 import { useAuthContext } from '../hooks/useAuthContext';
+import '../styles/Mood.css';
 
 const Mood = () => {
     const {moods, dispatch} = useMoodsContext();
@@ -68,16 +69,24 @@ const Mood = () => {
     return (
         <div className="mood-page">
             <h2>Moods</h2>
-            <form onSubmit={handleSubmit}>
-                <label>Mood Type</label>
-                <input type="text" value={moodType} onChange={(e) => setMoodType(e.target.value)} />
-                <label>Intensity</label>
-                <input type="number" value={intensity} onChange={(e) => setIntensity(e.target.value)} />
-                <label>Notes</label>
-                <input type="text" value={notes} onChange={(e) => setNotes(e.target.value)} />
-                <button type="submit">Add Mood</button>
+            <form onSubmit={handleSubmit} className="mood-form">
+                
+                <div className="mood-input">
+                    <label>Mood Type</label>
+                    <input type="text" value={moodType} onChange={(e) => setMoodType(e.target.value)} />
+                </div>
+                <div className="mood-input">
+                    <label>Intensity (1 - 10)</label>
+                    <input type="number" value={intensity} onChange={(e) => setIntensity(e.target.value)} />
+                </div>
+                <div className="mood-input">
+                    <label>Notes</label>
+                    {/* <input type="text" value={notes} onChange={(e) => setNotes(e.target.value)} /> */}
+                    <textarea rows={5} value={notes} onChange={(e) => setNotes(e.target.value)} />
+                </div>
+                <button type="submit" className="mood-btn">Add Mood</button>
             </form>
-            {error && <div className="error">{error}</div>}
+            {/* {error && <div className="error">{error}</div>} */}
             <div className="moods">
                 {moods && moods.map((mood) => (
                     <MoodDetails key={mood._id} mood={mood} />

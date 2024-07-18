@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: space-between;
     font-family: "Yanone Kaffeesatz", sans-serif;
-    padding: 24px 48px 0 64px;
+    padding: 24px 48px 16px 64px;
+    /* margin-bottom: -88px; */
 }
 .nav-bar .nav-logo {
     color: #FEB800;
@@ -40,9 +41,9 @@
     background-color: #313036;
 }
 .nav-bar .nav-profile .nav-auth {
-    /* display: flex;
+    display: flex;
     align-items: center;
-    gap: 16px; */
+    gap: 16px;
     background-color: #FDDFC7;
     padding: 2px;
     display: flex;

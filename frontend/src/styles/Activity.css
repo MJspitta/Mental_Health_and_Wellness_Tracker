@@ -1,0 +1,101 @@
+.activity-page {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    flex-wrap: wrap;
+}
+.activity-page h2 {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    background-color: #313036;
+    color: #FEB800;
+    padding: 10px;
+    border-radius: 10px;
+}
+.activity-form {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+.activity-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.activity-input label {
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.activity-input input {
+    width: 80%;
+    height: 30px;
+    padding: 8px;
+    border-radius: 10px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+.activity-input textarea {
+    width: 80%;
+    padding: 8px;
+    border-radius: 10px;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+.activity-btn {
+    width: 80%;
+    height: 40px;
+    background-color: #313036;
+    color: #FEB800;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 8px;
+    /* align-self: center; */
+}
+.activity-btn:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.activities {
+    padding: 10px 20px;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+.activity-details {
+    width: 30%;
+    height: 180px;
+    border: 0.5px solid #313036;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.activity-timing {
+    background-color: #313036;
+    color: #FEB800;
+    margin: -8px -8px 0;
+    padding: 8px;
+    border-radius: 10px;
+}
+.activity-display {
+    background-color: #313036;
+    color: #FEB800;
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+.activity-details strong {
+    margin-right: 5px;
+    letter-spacing: 1px;
+}
