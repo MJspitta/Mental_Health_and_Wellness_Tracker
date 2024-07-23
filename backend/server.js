@@ -1,20 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-// cors
-// const cors = require('cors');
 const userRoutes = require('./routes/user');
 const moodRoutes = require('./routes/mood');
 const activityRoutes = require('./routes/activity');
 const goalRoutes = require('./routes/goal');
 
 const app = express();
-
-// enable CORS
-// app.use(cors({
-//     origin: 'https://norm-deploy-backend.onrender.com',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE']
-// }));
 
 app.use(express.json());
 
