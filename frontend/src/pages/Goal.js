@@ -16,7 +16,7 @@ const Goal = () => {
 
     useEffect(() => {
         const fetchGoals = async () => {
-            const response = await fetch('${API_URL}/api/goals', {
+            const response = await fetch(`${API_URL}/api/goals`, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -43,7 +43,7 @@ const Goal = () => {
         
         const goal = {goalType, target, description};
 
-        const response = await fetch('${API_URL}/api/goals', {
+        const response = await fetch(`${API_URL}/api/goals`, {
             method: 'POST',
             body: JSON.stringify(goal),
             headers: {

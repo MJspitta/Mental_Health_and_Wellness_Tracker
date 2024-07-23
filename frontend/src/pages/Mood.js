@@ -16,7 +16,7 @@ const Mood = () => {
 
     useEffect(() => {
         const fetchMoods = async () => {
-            const response = await fetch('${API_URL}/api/moods', {
+            const response = await fetch(`${API_URL}/api/moods`, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -43,7 +43,7 @@ const Mood = () => {
         
         const mood = {moodType, intensity, notes};
 
-        const response = await fetch('${API_URL}/api/moods', {
+        const response = await fetch(`${API_URL}/api/moods`, {
             method: 'POST',
             body: JSON.stringify(mood),
             headers: {

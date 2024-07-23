@@ -11,7 +11,7 @@ export const useRegister = () => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch('${API_URL}/api/user/register', {
+        const response = await fetch(`${API_URL}/api/user/register`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({firstName, lastName, email, password})

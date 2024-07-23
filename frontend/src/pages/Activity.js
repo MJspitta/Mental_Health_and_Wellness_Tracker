@@ -16,7 +16,7 @@ const Activity = () => {
 
     useEffect(() => {
         const fetchActivities = async () => {
-            const response = await fetch('${API_URL}/api/activities', {
+            const response = await fetch(`${API_URL}/api/activities`, {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -43,7 +43,7 @@ const Activity = () => {
         
         const activity = {activityType, duration, description};
 
-        const response = await fetch('${API_URL}/api/activities', {
+        const response = await fetch(`${API_URL}/api/activities`, {
             method: 'POST',
             body: JSON.stringify(activity),
             headers: {
