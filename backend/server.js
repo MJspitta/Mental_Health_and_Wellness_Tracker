@@ -1,12 +1,28 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const userRoutes = require('./routes/user');
 const moodRoutes = require('./routes/mood');
 const activityRoutes = require('./routes/activity');
 const goalRoutes = require('./routes/goal');
 
 const app = express();
+
+// allow requests from specific origins
+const allowedOrigins = ['https://norm-gy40.onrender.com'];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
 
 app.use(express.json());
 
