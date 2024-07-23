@@ -12,10 +12,11 @@ const Activity = () => {
     const [duration, setDuration] = useState('');
     const [description, setDescription] = useState('');
     const [error, setError] = useState(null);
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
 
     useEffect(() => {
         const fetchActivities = async () => {
-            const response = await fetch('/api/activities', {
+            const response = await fetch('${API_URL}/api/activities', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -42,7 +43,7 @@ const Activity = () => {
         
         const activity = {activityType, duration, description};
 
-        const response = await fetch('/api/activities', {
+        const response = await fetch('${API_URL}/api/activities', {
             method: 'POST',
             body: JSON.stringify(activity),
             headers: {

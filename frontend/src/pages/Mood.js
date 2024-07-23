@@ -11,11 +11,12 @@ const Mood = () => {
     const [intensity, setIntensity] = useState('');
     const [notes, setNotes] = useState('');
     const [error, setError] = useState(null);
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
 
 
     useEffect(() => {
         const fetchMoods = async () => {
-            const response = await fetch('/api/moods', {
+            const response = await fetch('${API_URL}/api/moods', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -42,7 +43,7 @@ const Mood = () => {
         
         const mood = {moodType, intensity, notes};
 
-        const response = await fetch('/api/moods', {
+        const response = await fetch('${API_URL}/api/moods', {
             method: 'POST',
             body: JSON.stringify(mood),
             headers: {

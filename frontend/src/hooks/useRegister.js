@@ -5,12 +5,13 @@ export const useRegister = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const { dispatch } = useAuthContext();
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
 
     const register = async (firstName, lastName, email, password) => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch('/api/user/register', {
+        const response = await fetch('${API_URL}/api/user/register', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({firstName, lastName, email, password})

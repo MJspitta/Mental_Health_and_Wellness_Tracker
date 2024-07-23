@@ -12,10 +12,11 @@ const Goal = () => {
     const [target, setTarget] = useState('');
     const [description, setDescription] = useState('');
     const [error, setError] = useState(null);
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
 
     useEffect(() => {
         const fetchGoals = async () => {
-            const response = await fetch('/api/goals', {
+            const response = await fetch('${API_URL}/api/goals', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -42,7 +43,7 @@ const Goal = () => {
         
         const goal = {goalType, target, description};
 
-        const response = await fetch('/api/goals', {
+        const response = await fetch('${API_URL}/api/goals', {
             method: 'POST',
             body: JSON.stringify(goal),
             headers: {
