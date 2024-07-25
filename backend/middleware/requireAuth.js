@@ -3,13 +3,14 @@ const User = require('../models/userModel');
 
 const requireAuth = async (req, res, next) => {
 
-    // verify authentication
+    // verify authorization header exists
     const { authorization } = req.headers;
 
     if (!authorization) {
         return res.status(401).json({error: 'Authorization token required'});
     }
 
+    // extract token from authorization header
     const token = authorization.split(" ")[1];
 
     if (!token) {
@@ -18,8 +19,10 @@ const requireAuth = async (req, res, next) => {
     console.log('Recieved Token:', token);
 
     try {
+        // verify the token and extract user ID
         const {_id} = jwt.verify(token, process.env.SECRET);
 
+        // find user with id and attach user info to req obj
         req.user = await User.findOne({ _id }).select('_id');
         next();
     } catch (error) {

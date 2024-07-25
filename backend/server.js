@@ -9,9 +9,10 @@ const goalRoutes = require('./routes/goal');
 
 const app = express();
 
-// allow requests from specific origins
+// Allow requests from specific origins
 const allowedOrigins = ['https://norm-gy40.onrender.com'];
 
+// Configure CORS
 app.use(cors({
     origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -24,9 +25,10 @@ app.use(cors({
     credentials: true,
 }));
 
+// Middleware to parse JSON requests
 app.use(express.json());
 
-// middleware to log requests
+// Middleware to log requests
 app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
@@ -39,7 +41,7 @@ app.use('/api/activities', activityRoutes);
 app.use('/api/goals', goalRoutes);
 
 
-// connect to db
+// connect to db and start server
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         // listening for requests

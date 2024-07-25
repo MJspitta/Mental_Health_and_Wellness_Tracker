@@ -8,8 +8,10 @@ const router = express.Router();
 // require auth for all goal routes
 router.use(requireAuth);
 
+// get all goals for user
 router.get('/', getGoals);
 
+// add a new goal for user
 router.post('/', addGoal);
 
 module.exports = router;

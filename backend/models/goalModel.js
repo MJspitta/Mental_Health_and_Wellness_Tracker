@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+// define schema for goal
 const goalSchema = new Schema({
     goalType: { type: String, required: true },
     target: { type: String, required: true },

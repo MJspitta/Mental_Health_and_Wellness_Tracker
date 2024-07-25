@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+// define schema for activity
 const activitySchema = new Schema({
     activityType: { type: String, required: true },
     duration: { type: String, required: true },
