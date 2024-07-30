@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useAuthContext } from './useAuthContext';
 
+// custom hook for user registration
 export const useRegister = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const { dispatch } = useAuthContext();
     const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
 
+    // func to register new user
     const register = async (firstName, lastName, email, password) => {
         setIsLoading(true);
         setError(null);
