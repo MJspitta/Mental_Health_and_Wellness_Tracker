@@ -11,6 +11,7 @@ const app = express();
 
 // Allow requests from specific origins
 const allowedOrigins = ['https://norm-gy40.onrender.com'];
+// http://localhost:3000
 
 // Configure CORS
 app.use(cors({
